@@ -10,6 +10,55 @@
 npm i --save unused-files-webpack-plugin
 ```
 
+## Usage
+
+```js
+// webpack.config.js
+var UnusedFilesWebpackPlugin = require("unused-files-webpack-plugin");
+
+module.exports = {
+  plugins: [
+    new UnusedFilesWebpackPlugin(),
+  ],
+};
+```
+
+
+## Options
+
+```js
+new UnusedFilesWebpackPlugin(options)
+```
+
+### options.pattern
+
+The pattern to glob all files within the context.
+
+* Default: `**/*.*`
+* Directly pass to [`glob(pattern)`](https://github.com/isaacs/node-glob#globpattern-options-cb)
+
+### options.globOptions
+
+The options object pass to second parameter of `glob`.
+
+* Default: `{ignore: "node_modules/**/*"}`
+* Directly pass to [`glob(pattern, globOptions)`](https://github.com/isaacs/node-glob#globpattern-options-cb)
+
+#### globOptions.ignore
+
+Ignore pattern for glob. Can be a String or an Array of String.
+
+* Default: `"node_modules/**/*"`
+* Pass to: [`options.ignore`](https://github.com/isaacs/node-glob#options)
+
+#### globOptions.cwd
+
+Current working directory for glob. If you don't set explicitly, it defaults to the `context` specified by your webpack compiler at runtime.
+
+* Default: `webpackCompiler.context`
+* Pass to: [`options.cwd`](https://github.com/isaacs/node-glob#options)
+* See also: [`context` in webpack](http://webpack.github.io/docs/configuration.html#context)
+
 
 ## Contributing
 
