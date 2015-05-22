@@ -33,6 +33,7 @@
     "tomchentw-npm-dev": "^1.2.0"
   },
   "dependencies": {
-    "glob": "^5.0.7"
+    "glob": "^5.0.7",
+    "object-assign": "^2.0.0"
   }
 }
