@@ -1,3 +1,22 @@
+<a name"1.2.0"></a>
+## 1.2.0 (2015-07-11)
+
+
+#### Features
+
+* **globOptions:** makes ignore option overidable ([6b630944](https://github.com/tomchentw/unused-files-webpack-plugin/commit/6b630944), closes [#1](https://github.com/tomchentw/unused-files-webpack-plugin/issues/1))
+
+
+#### Breaking Changes
+
+* globOptions.ignore is now overridable
+
+    If you choose to override globOptions with new ignore option,
+    make sure you'll include `node_modules/**/*` for the new ignore.
+
+ ([6b630944](https://github.com/tomchentw/unused-files-webpack-plugin/commit/6b630944))
+
+
 ## 1.1.0 (2015-05-22)
 
 
