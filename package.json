@@ -5,6 +5,7 @@
   "description": "Glob all files that are not compiled by webpack under webpack's context",
   "main": "lib/index.js",
   "scripts": {
+    "build": "echo 'build script' && exit 0",
     "test": "exit 1"
   },
   "repository": {
@@ -30,7 +31,7 @@
   },
   "homepage": "https://github.com/tomchentw/unused-files-webpack-plugin/",
   "devDependencies": {
-    "tomchentw-npm-dev": "^1.2.0"
+    "tomchentw-npm-dev": "^3.0.0"
   },
   "dependencies": {
     "glob": "^5.0.7",
