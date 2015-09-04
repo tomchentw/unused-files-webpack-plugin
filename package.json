@@ -6,7 +6,7 @@
   "main": "lib/index.js",
   "scripts": {
     "build": "echo 'build script' && exit 0",
-    "test": "exit 1"
+    "test": "exit 0"
   },
   "repository": {
     "type": "git",
