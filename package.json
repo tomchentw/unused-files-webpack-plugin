@@ -6,6 +6,7 @@
   "main": "lib/index.js",
   "scripts": {
     "build": "echo 'build script' && exit 0",
+    "test:cov": "istanbul cover --report lcov tape $npm_package_config_tape",
     "test": "tape $npm_package_config_tape"
   },
   "config": {
@@ -34,6 +35,8 @@
   },
   "homepage": "https://github.com/tomchentw/unused-files-webpack-plugin/",
   "devDependencies": {
+    "codeclimate-test-reporter": "^0.1.0",
+    "istanbul": "^0.3.19",
     "memory-fs": "^0.2.0",
     "tape": "^4.2.0",
     "tomchentw-npm-dev": "^3.0.0",
