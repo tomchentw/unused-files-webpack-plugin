@@ -37,6 +37,13 @@ The pattern to glob all files within the context.
 * Default: `**/*.*`
 * Directly pass to [`glob(pattern)`](https://github.com/isaacs/node-glob#globpattern-options-cb)
 
+### options.failOnUnused
+
+Emit error instead of warning in webpack compilation result.
+
+* Default: `undefined`
+* Explicitly set it to `true` to enable this feature
+
 ### options.globOptions
 
 The options object pass to second parameter of `glob`.
