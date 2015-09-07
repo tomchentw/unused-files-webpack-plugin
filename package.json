@@ -6,7 +6,10 @@
   "main": "lib/index.js",
   "scripts": {
     "build": "echo 'build script' && exit 0",
-    "test": "exit 1"
+    "test": "tape $npm_package_config_tape"
+  },
+  "config": {
+    "tape": "lib/**/*-test.js"
   },
   "repository": {
     "type": "git",
@@ -31,7 +34,10 @@
   },
   "homepage": "https://github.com/tomchentw/unused-files-webpack-plugin/",
   "devDependencies": {
-    "tomchentw-npm-dev": "^3.0.0"
+    "memory-fs": "^0.2.0",
+    "tape": "^4.2.0",
+    "tomchentw-npm-dev": "^3.0.0",
+    "webpack": "^1.12.1"
   },
   "dependencies": {
     "glob": "^5.0.7",
