@@ -1,3 +1,12 @@
+<a name"1.3.0"></a>
+## 1.3.0 (2015-09-07)
+
+
+#### Features
+
+* **options:** add failOnUnused to enable generating error ([7b7620d8](https://github.com/tomchentw/unused-files-webpack-plugin/commit/7b7620d8), closes [#3](https://github.com/tomchentw/unused-files-webpack-plugin/issues/3))
+
+
 <a name"1.2.0"></a>
 ## 1.2.0 (2015-07-11)
 
