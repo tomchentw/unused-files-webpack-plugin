@@ -41,7 +41,7 @@ The pattern to glob all files within the context.
 
 Emit error instead of warning in webpack compilation result.
 
-* Default: `undefined`
+* Default: `false`
 * Explicitly set it to `true` to enable this feature
 
 ### options.globOptions
