@@ -1,3 +1,47 @@
+<a name="2.0.0"></a>
+# [2.0.0](https://github.com/tomchentw/unused-files-webpack-plugin/compare/v1.3.0...v2.0.0) (2016-01-22)
+
+
+### Features
+
+* **src:** rewrite in ES2015 format ([9a61f21](https://github.com/tomchentw/unused-files-webpack-plugin/commit/9a61f21))
+
+
+### BREAKING CHANGES
+
+* src: Removes commonjs module support.
+
+Before:
+
+```js
+// webpack.config.js
+var UnusedFilesWebpackPlugin = require("unused-files-webpack-plugin");
+```
+
+After:
+
+In ES2015 module format:
+
+```js
+import UnusedFilesWebpackPlugin from "unused-files-webpack-plugin";
+// it's the same as
+import { default as UnusedFilesWebpackPlugin } from "unused-files-webpack-plugin";
+// You could access from named export as well.
+import { UnusedFilesWebpackPlugin } from "unused-files-webpack-plugin";
+```
+
+If you still use commonjs:
+
+```js
+var UnusedFilesWebpackPlugin = require("unused-files-webpack-plugin").default;
+// or named export
+var UnusedFilesWebpackPlugin = require("unused-files-webpack-plugin").UnusedFilesWebpackPlugin;
+// with destructive assignment
+var { UnusedFilesWebpackPlugin } = require("unused-files-webpack-plugin");
+```
+
+
+
 <a name"1.3.0"></a>
 ## 1.3.0 (2015-09-07)
 
