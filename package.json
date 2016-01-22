@@ -1,16 +1,25 @@
 {
-  "__template__gist__": "https://gist.github.com/tomchentw/368a93bb748ad9d576f1#file-package-json",
   "name": "unused-files-webpack-plugin",
   "version": "1.3.0",
   "description": "Glob all files that are not compiled by webpack under webpack's context",
   "main": "lib/index.js",
+  "files": [
+    "lib/",
+    "src/",
+    "CHANGELOG.md"
+  ],
   "scripts": {
-    "build": "echo 'build script' && exit 0",
-    "test:cov": "istanbul cover --report lcov tape $npm_package_config_tape",
-    "test": "tape $npm_package_config_tape"
+    "clean": "rimraf lib",
+    "prebuild": "npm run lint && npm run clean",
+    "build": "cross-env NODE_ENV=production babel src --out-dir lib",
+    "lint": "cross-env NODE_ENV=test eslint .",
+    "pretest:cov": "npm run lint",
+    "pretest": "npm run lint",
+    "test:cov": "cross-env NODE_ENV=test babel-node ./node_modules/.bin/isparta cover --report lcov ./node_modules/.bin/tape -- $npm_package_config_tape",
+    "test": "cross-env NODE_ENV=test babel-node ./node_modules/.bin/tape $npm_package_config_tape"
   },
   "config": {
-    "tape": "lib/**/*-test.js"
+    "tape": "src/**/*.spec.js"
   },
   "repository": {
     "type": "git",
@@ -35,15 +44,29 @@
   },
   "homepage": "https://github.com/tomchentw/unused-files-webpack-plugin/",
   "devDependencies": {
-    "codeclimate-test-reporter": "^0.1.0",
-    "istanbul": "^0.3.19",
-    "memory-fs": "^0.2.0",
-    "tape": "^4.2.0",
-    "tomchentw-npm-dev": "^3.0.0",
-    "webpack": "^1.12.1"
+    "babel-cli": "^6.4.5",
+    "babel-core": "^6.4.5",
+    "babel-eslint": "^5.0.0-beta6",
+    "babel-plugin-transform-flow-comments": "^6.4.0",
+    "babel-plugin-typecheck": "^3.6.1",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "babel-preset-stage-0": "^6.3.13",
+    "babel-register": "^6.4.3",
+    "codeclimate-test-reporter": "^0.3.0",
+    "cross-env": "^1.0.7",
+    "eslint": "^1.10.3",
+    "eslint-config-airbnb": "^3.1.0",
+    "eslint-plugin-react": "^3.15.0",
+    "isparta": "^4.0.0",
+    "istanbul": "^0.4.2",
+    "memory-fs": "^0.3.0",
+    "rimraf": "^2.5.0",
+    "tape": "^4.4.0",
+    "tomchentw-npm-dev": "^3.2.0",
+    "webpack": "^1.12.11"
   },
   "dependencies": {
-    "glob": "^5.0.7",
-    "object-assign": "^4.0.1"
+    "glob": "^6.0.4"
   }
 }
