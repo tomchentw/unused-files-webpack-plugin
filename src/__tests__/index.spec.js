@@ -25,7 +25,7 @@ const EXPECTED_FILENAME_LIST = [
   `package.json`,
 ];
 
-test(`UnusedFilesWebpackPlugin`, function testUnusedFilesWebpackPlugin(t) {
+test(`UnusedFilesWebpackPlugin`, t => {
   const compiler = webpack({
     context: resolvePath(__dirname, `../../`),
     entry: {
