@@ -46,7 +46,7 @@ export class UnusedFilesWebpackPlugin {
       }
       const error = new Error(`
 UnusedFilesWebpackPlugin found some unused files:
-${ unused.join(`\n`) }`);
+${unused.join(`\n`)}`);
 
       if (this.options.failOnUnused) {
         compilation.errors.push(error);
@@ -65,10 +65,10 @@ ${ unused.join(`\n`) }`);
   }
 
   _getFileDepsMap(compilation) {
-    const fileDepsBy = {};
-    compilation.fileDependencies.forEach(usedFilepath =>
-      fileDepsBy[usedFilepath] = usedFilepath
-    );
+    const fileDepsBy = compilation.fileDependencies.reduce((acc, usedFilepath) => ({
+      ...acc,
+      [usedFilepath]: usedFilepath,
+    }), {});
 
     const { assets } = compilation;
     Object.keys(assets).forEach(assetRelpath => {
