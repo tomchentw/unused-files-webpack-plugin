@@ -65,7 +65,7 @@
     "memory-fs": "^0.3.0",
     "rimraf": "^2.5.1",
     "tape": "^4.4.0",
-    "tomchentw-npm-dev": "^3.2.0",
+    "standard-version": "^2.2.1",
     "webpack": "^1.12.12"
   },
   "dependencies": {
