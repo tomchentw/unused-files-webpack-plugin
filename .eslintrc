@@ -1,8 +1,7 @@
 {
   "parser": "babel-eslint",
   "extends": [
-    "airbnb/base",
-    "airbnb/rules/strict",
+    "airbnb"
   ],
   "env": {
     "browser": true,
