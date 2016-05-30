@@ -1,3 +1,12 @@
+# Change Log
+
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+<a name="2.0.3"></a>
+## [2.0.3](https://github.com/tomchentw/unused-files-webpack-plugin/compare/v2.0.2...v2.0.3) (2016-05-30)
+
+
+
 <a name="2.0.2"></a>
 ## [2.0.2](https://github.com/tomchentw/unused-files-webpack-plugin/compare/v2.0.1...v2.0.2) (2016-01-25)
 
@@ -98,4 +107,3 @@ var { UnusedFilesWebpackPlugin } = require("unused-files-webpack-plugin");
 #### Features
 
 * **UnusedFilesWebpackPlugin:** use glob to select files ([f8e081e8](https://github.com/tomchentw/unused-files-webpack-plugin/commit/f8e081e835344820c419dc37162c8028af7ba3f9))
-
