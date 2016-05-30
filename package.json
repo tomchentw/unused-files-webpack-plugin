@@ -16,7 +16,9 @@
     "pretest:cov": "npm run lint",
     "pretest": "npm run lint",
     "test:cov": "cross-env NODE_ENV=test babel-node ./node_modules/.bin/isparta cover --report lcov ./node_modules/.bin/tape -- $npm_package_config_tape",
-    "test": "cross-env NODE_ENV=test babel-node ./node_modules/.bin/tape $npm_package_config_tape"
+    "test": "cross-env NODE_ENV=test babel-node ./node_modules/.bin/tape $npm_package_config_tape",
+    "prerelease": "npm run build && git add -A && git commit -m 'chore(lib): compile from src using babel'",
+    "release": "standard-version"
   },
   "config": {
     "tape": "src/**/*.spec.js"
