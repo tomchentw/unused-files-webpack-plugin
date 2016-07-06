@@ -6,7 +6,7 @@ import {
   default as glob,
 } from "glob";
 
-export class UnusedFilesWebpackPlugin {
+class UnusedFilesWebpackPlugin {
   constructor(options = {}) {
     this.options = {
       pattern: `**/*.*`,
