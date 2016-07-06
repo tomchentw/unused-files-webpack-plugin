@@ -1,10 +1,6 @@
-import {
-  join as joinPath,
-} from "path";
+import { join as joinPath } from "path";
 
-import {
-  default as glob,
-} from "glob";
+import glob from "glob";
 
 class UnusedFilesWebpackPlugin {
   constructor(options = {}) {
