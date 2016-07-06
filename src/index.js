@@ -1,12 +1,8 @@
-import {
-  join as joinPath,
-} from "path";
+import { join as joinPath } from "path";
 
-import {
-  default as glob,
-} from "glob";
+import glob from "glob";
 
-export class UnusedFilesWebpackPlugin {
+class UnusedFilesWebpackPlugin {
   constructor(options = {}) {
     this.options = {
       pattern: `**/*.*`,
@@ -78,5 +74,10 @@ ${unused.join(`\n`)}`);
     return fileDepsBy;
   }
 }
+
+// Backward compatability with require(...).default;
+UnusedFilesWebpackPlugin.default = UnusedFilesWebpackPlugin;
+// Backward compatability with import { UnusedFilesWebpackPlugin } from ...;
+UnusedFilesWebpackPlugin.UnusedFilesWebpackPlugin = UnusedFilesWebpackPlugin;
 
 export default UnusedFilesWebpackPlugin;

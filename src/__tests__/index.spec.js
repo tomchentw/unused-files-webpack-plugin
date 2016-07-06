@@ -2,21 +2,22 @@ import {
   resolve as resolvePath,
 } from "path";
 
-import {
-  default as test,
-} from "tape";
+import test from "tape";
 
-import {
-  default as MemoryFS,
-} from "memory-fs";
+import MemoryFS from "memory-fs";
 
-import {
-  default as webpack,
-} from "webpack";
+import webpack from "webpack";
 
-import {
-  default as UnusedFilesWebpackPlugin,
-} from "../index";
+// eslint-disable-next-line import/no-duplicates
+import UnusedFilesWebpackPlugin from "../index";
+// eslint-disable-next-line import/no-duplicates, no-duplicate-imports
+import { UnusedFilesWebpackPlugin as ufwpByProperty } from "../index";
+// eslint-disable-next-line import/no-duplicates, no-duplicate-imports
+import { default as ufwpByImportDefault } from "../index";
+// eslint-disable-next-line import/no-duplicates, no-duplicate-imports
+import * as ufwpModByStar from "../index";
+const ufwpByRequire = require(`../index`);
+const ufwpByRequireDefault = require(`../index`).default;
 
 const EXPECTED_FILENAME_LIST = [
   `CHANGELOG.md`,
@@ -55,4 +56,13 @@ test(`UnusedFilesWebpackPlugin`, t => {
 
     t.end();
   });
+});
+
+test(`imports`, t => {
+  t.equal(ufwpByProperty, UnusedFilesWebpackPlugin);
+  t.equal(ufwpByRequire, UnusedFilesWebpackPlugin);
+  t.equal(ufwpByRequireDefault, UnusedFilesWebpackPlugin);
+  t.equal(ufwpByImportDefault, UnusedFilesWebpackPlugin);
+  t.equal(ufwpModByStar.UnusedFilesWebpackPlugin, UnusedFilesWebpackPlugin);
+  t.end();
 });

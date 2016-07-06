@@ -7,11 +7,11 @@
     }
   },
   "plugins": [
-    "transform-flow-comments"
+    "transform-flow-comments",
+    "add-module-exports"
   ],
   "presets": [
     "es2015",
-    "stage-0",
-    "react"
+    "stage-0"
   ]
 }
