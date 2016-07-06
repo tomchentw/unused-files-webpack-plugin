@@ -75,4 +75,9 @@ ${unused.join(`\n`)}`);
   }
 }
 
+// Backward compatability with require(...).default;
+UnusedFilesWebpackPlugin.default = UnusedFilesWebpackPlugin;
+// Backward compatability with import { UnusedFilesWebpackPlugin } from ...;
+UnusedFilesWebpackPlugin.UnusedFilesWebpackPlugin = UnusedFilesWebpackPlugin;
+
 export default UnusedFilesWebpackPlugin;
