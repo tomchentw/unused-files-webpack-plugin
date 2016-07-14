@@ -16,7 +16,9 @@ npm i --save unused-files-webpack-plugin
 // webpack.config.babel.js
 import UnusedFilesWebpackPlugin from "unused-files-webpack-plugin";
 // webpack.config.js
-var UnusedFilesWebpackPlugin = require("unused-files-webpack-plugin").default;
+var UnusedFilesWebpackPlugin = require("unused-files-webpack-plugin")["default"];
+// or
+var UnusedFilesWebpackPlugin = require("unused-files-webpack-plugin").UnusedFilesWebpackPlugin;
 
 module.exports = {
   plugins: [
