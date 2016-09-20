@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="2.0.5"></a>
+## [2.0.5](https://github.com/tomchentw/unused-files-webpack-plugin/compare/v2.0.4...v2.0.5) (2016-09-20)
+
+
+### Bug Fixes
+
+* **index.js:** if bail is set, callback with error ([#11](https://github.com/tomchentw/unused-files-webpack-plugin/issues/11)) ([23b85ad](https://github.com/tomchentw/unused-files-webpack-plugin/commit/23b85ad)), closes [#10](https://github.com/tomchentw/unused-files-webpack-plugin/issues/10)
+
+
+
 <a name="2.0.4"></a>
 ## [2.0.4](https://github.com/tomchentw/unused-files-webpack-plugin/compare/v2.0.3...v2.0.4) (2016-07-14)
 
