@@ -3,8 +3,9 @@
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
 <a name="2.0.5"></a>
-## [2.0.5](https://github.com/tomchentw/unused-files-webpack-plugin/compare/v2.0.4...v2.0.5) (2016-09-20)
+## (Deprecated) [2.0.5](https://github.com/tomchentw/unused-files-webpack-plugin/compare/v2.0.4...v2.0.5) (2016-09-20)
 
+*Deprecated* due to https://github.com/tomchentw/unused-files-webpack-plugin/pull/11#issuecomment-248652421
 
 ### Bug Fixes
 
