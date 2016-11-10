@@ -30,37 +30,34 @@ export class UnusedFilesWebpackPlugin {
     const globOptions = this._getGlobOptions(compiler);
     const fileDepsMap = this._getFileDepsMap(compilation);
     const absolutePathResolver = it => joinPath(globOptions.cwd, it);
+    const errorArray = this.options.failOnUnused ?
+      compilation.errors :
+      compilation.warnings;
 
     const handleError = err => {
-      if (compilation.bail) {
-        done(err);
-      } else {
-        compilation.errors.push(err);
+      if (this.options.failOnUnused && compilation.bail) {
+        return done(err);
       }
+
+      errorArray.push(err);
+      return done();
     };
 
     glob(this.options.pattern, globOptions, (err, files) => {
       if (err) {
-        handleError(err);
-        return;
+        return handleError(err);
       }
       const unused = files.filter(filepath =>
         !(absolutePathResolver(filepath) in fileDepsMap)
       );
       if (unused.length === 0) {
-        done();
-        return;
+        return done();
       }
       const error = new Error(`
 UnusedFilesWebpackPlugin found some unused files:
 ${unused.join(`\n`)}`);
 
-      if (this.options.failOnUnused) {
-        handleError(error);
-      } else {
-        compilation.warnings.push(error);
-        done();
-      }
+      return handleError(error);
     });
   }
 
