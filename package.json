@@ -1,6 +1,6 @@
 {
   "name": "unused-files-webpack-plugin",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Glob all files that are not compiled by webpack under webpack's context",
   "main": "lib/index.js",
   "files": [
