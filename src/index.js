@@ -69,10 +69,10 @@ ${unused.join(`\n`)}`);
   }
 
   _getFileDepsMap(compilation) {
-    const fileDepsBy = compilation.fileDependencies.reduce((acc, usedFilepath) => ({
-      ...acc,
-      [usedFilepath]: usedFilepath,
-    }), {});
+    const fileDepsBy = compilation.fileDependencies.reduce((acc, usedFilepath) => {
+      acc[usedFilepath] = usedFilepath;
+      return acc;
+    }, {});
 
     const { assets } = compilation;
     Object.keys(assets).forEach(assetRelpath => {

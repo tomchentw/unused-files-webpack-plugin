@@ -26,6 +26,8 @@
     // Variables
     "no-use-before-define": [2, "nofunc"],
     "no-unused-vars": [2, {"args": "none"}],
+    // Performance Considerations
+    "no-param-reassign": [0],
     // Stylistic Issues
     "camelcase": [0],
     "no-underscore-dangle": [0],
