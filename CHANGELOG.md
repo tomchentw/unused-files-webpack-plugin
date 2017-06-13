@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.0.2"></a>
+## [3.0.2](https://github.com/tomchentw/unused-files-webpack-plugin/compare/v3.0.1...v3.0.2) (2017-06-13)
+
+
+### Bug Fixes
+
+* **index.js:** avoid creating a new object in reduce loop ([8dcf206](https://github.com/tomchentw/unused-files-webpack-plugin/commit/8dcf206))
+
+
+
 <a name="3.0.1"></a>
 ## [3.0.1](https://github.com/tomchentw/unused-files-webpack-plugin/compare/v3.0.0...v3.0.1) (2017-02-13)
 
