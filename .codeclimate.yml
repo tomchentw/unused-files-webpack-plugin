@@ -34,4 +34,3 @@ ratings:
 
 exclude_paths:
 - lib/**
-- public/**
