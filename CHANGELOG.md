@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.1.0"></a>
+# [3.1.0](https://github.com/tomchentw/unused-files-webpack-plugin/compare/v3.0.2...v3.1.0) (2017-10-21)
+
+
+### Features
+
+* **index.js:** rewrite with async function ([0754e72](https://github.com/tomchentw/unused-files-webpack-plugin/commit/0754e72))
+* **package.json:** add `babel-runtime`, `semver` and `util.promisify` to dependencies ([28cf6c5](https://github.com/tomchentw/unused-files-webpack-plugin/commit/28cf6c5))
+
+
+
 <a name="3.0.2"></a>
 ## [3.0.2](https://github.com/tomchentw/unused-files-webpack-plugin/compare/v3.0.1...v3.0.2) (2017-06-13)
 
