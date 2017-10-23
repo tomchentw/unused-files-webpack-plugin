@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.2.0"></a>
+# [3.2.0](https://github.com/tomchentw/unused-files-webpack-plugin/compare/v3.1.0...v3.2.0) (2017-10-23)
+
+
+### Features
+
+* **index.js:** support multiple patterns ([961b1d1](https://github.com/tomchentw/unused-files-webpack-plugin/commit/961b1d1)), closes [#2](https://github.com/tomchentw/unused-files-webpack-plugin/issues/2)
+* **package.json:** add `glob-all` and `warning` to dependencies ([3961606](https://github.com/tomchentw/unused-files-webpack-plugin/commit/3961606))
+* **package.json:** remove `glob` from dependencies ([03e08b6](https://github.com/tomchentw/unused-files-webpack-plugin/commit/03e08b6))
+
+
+
 <a name="3.1.0"></a>
 # [3.1.0](https://github.com/tomchentw/unused-files-webpack-plugin/compare/v3.0.2...v3.1.0) (2017-10-21)
 
