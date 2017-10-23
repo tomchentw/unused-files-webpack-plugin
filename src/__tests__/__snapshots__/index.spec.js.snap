@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UnusedFilesWebpackPlugin module deprecated options.pattern should work as expected 1`] = `
+"
+UnusedFilesWebpackPlugin found some unused files:
+src/__tests__/__snapshots__/index.spec.js.snap
+src/__tests__/index.spec.js"
+`;
+
+exports[`UnusedFilesWebpackPlugin module options.patterns should work as expected for a single pattern 1`] = `
+"
+UnusedFilesWebpackPlugin found some unused files:
+src/__tests__/__snapshots__/index.spec.js.snap
+src/__tests__/index.spec.js"
+`;
+
+exports[`UnusedFilesWebpackPlugin module options.patterns should work as expected for an array of patterns 1`] = `
+"
+UnusedFilesWebpackPlugin found some unused files:
+src/__tests__/index.spec.js"
+`;
