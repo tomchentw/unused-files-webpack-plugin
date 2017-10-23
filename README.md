@@ -12,17 +12,26 @@ npm i --save unused-files-webpack-plugin
 
 ## Usage
 
+### `webpack.config.babel.js`
+
 ```js
-// webpack.config.babel.js
 import UnusedFilesWebpackPlugin from "unused-files-webpack-plugin";
-// webpack.config.js
-var UnusedFilesWebpackPlugin = require("unused-files-webpack-plugin")["default"];
-// or
-var UnusedFilesWebpackPlugin = require("unused-files-webpack-plugin").UnusedFilesWebpackPlugin;
+
+export default {
+  plugins: [
+    new UnusedFilesWebpackPlugin(options),
+  ],
+};
+```
+
+### `webpack.config.js`
+
+```js
+const { UnusedFilesWebpackPlugin } = require("unused-files-webpack-plugin");
 
 module.exports = {
   plugins: [
-    new UnusedFilesWebpackPlugin(),
+    new UnusedFilesWebpackPlugin(options),
   ],
 };
 ```
@@ -34,26 +43,26 @@ module.exports = {
 new UnusedFilesWebpackPlugin(options)
 ```
 
-### options.pattern
+### options.patterns
 
-The pattern to glob all files within the context.
+The (array of) pattern(s) to glob all files within the context.
 
-* Default: `**/*.*`
-* Directly pass to [`glob(pattern)`](https://github.com/isaacs/node-glob#globpattern-options-cb)
+* Default: `["**/*.*"]`
+* Directly pass to [`glob-all(patterns)`](https://github.com/jpillora/node-glob-all#api)
 
 ### options.failOnUnused
 
-Emit error instead of warning in webpack compilation result.
+Emit _error_ instead of _warning_ in webpack compilation result.
 
 * Default: `false`
 * Explicitly set it to `true` to enable this feature
 
 ### options.globOptions
 
-The options object pass to second parameter of `glob`.
+The options object pass to second parameter of `glob-all`.
 
 * Default: `{ignore: "node_modules/**/*"}`
-* Directly pass to [`glob(pattern, globOptions)`](https://github.com/isaacs/node-glob#globpattern-options-cb)
+* Directly pass to [`glob-all(pattern, globOptions)`](https://github.com/jpillora/node-glob-all#api), which then pass to [`glob(…, globOptions)`](https://github.com/isaacs/node-glob#options)
 
 #### globOptions.ignore
 
@@ -68,7 +77,7 @@ Current working directory for glob. If you don't set explicitly, it defaults to 
 
 * Default: `webpackCompiler.context`
 * Pass to: [`options.cwd`](https://github.com/isaacs/node-glob#options)
-* See also: [`context` in webpack](http://webpack.github.io/docs/configuration.html#context)
+* See also: [`context` in webpack](https://webpack.js.org/configuration/entry-context/#context)
 
 
 ## Contributing
