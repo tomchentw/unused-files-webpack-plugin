@@ -1,8 +1,9 @@
 import path from "path";
-import nativeGlob from "glob";
+import warning from "warning";
+import nativeGlobAll from "glob-all";
 import promisify from "util.promisify";
 
-const glob = promisify(nativeGlob);
+const globAll = promisify(nativeGlobAll);
 
 function globOptionsWith(compiler, globOptions) {
   return {
@@ -33,7 +34,10 @@ async function applyAfterEmit(compiler, compilation, plugin) {
     const globOptions = globOptionsWith(compiler, plugin.globOptions);
     const fileDepsMap = getFileDepsMap(compilation);
 
-    const files = await glob(plugin.options.pattern, globOptions);
+    const files = await globAll(
+      plugin.options.patterns || plugin.options.pattern,
+      globOptions
+    );
     const unused = files.filter(
       it => !fileDepsMap[path.join(globOptions.cwd, it)]
     );
@@ -56,9 +60,17 @@ ${unused.join(`\n`)}`);
 
 export class UnusedFilesWebpackPlugin {
   constructor(options = {}) {
+    warning(
+      !options.pattern,
+      `
+"options.pattern" is deprecated and will be removed in v4.0.0.
+Use "options.patterns" instead, which supports array of patterns and exclude pattern.
+See https://www.npmjs.com/package/glob-all#notes
+`
+    );
     this.options = {
-      pattern: `**/*.*`,
       ...options,
+      patterns: options.patterns || options.pattern || [`**/*.*`],
       failOnUnused: options.failOnUnused === true
     };
 
