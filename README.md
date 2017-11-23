@@ -1,7 +1,7 @@
 # unused-files-webpack-plugin
 > Glob all files that are not compiled by webpack under webpack's context
 
-[![Version][npm-image]][npm-url] [![Travis CI][travis-image]][travis-url] [![Quality][codeclimate-image]][codeclimate-url] [![Coverage][codeclimate-coverage-image]][codeclimate-coverage-url] [![Dependencies][gemnasium-image]][gemnasium-url] [![Gitter][gitter-image]][gitter-url]
+[![Version][npm-image]][npm-url] [![Travis CI][travis-image]][travis-url] [![Quality][codeclimate-maintainability-image]][codeclimate-maintainability-url] [![Coverage][codeclimate-c-image]][codeclimate-c-url] [![Dependencies][gemnasium-image]][gemnasium-url] [![Gitter][gitter-image]][gitter-url]
 
 
 ## Installation
@@ -96,10 +96,10 @@ Current working directory for glob. If you don't set explicitly, it defaults to 
 
 [travis-image]: https://img.shields.io/travis/tomchentw/unused-files-webpack-plugin.svg?style=flat-square
 [travis-url]: https://travis-ci.org/tomchentw/unused-files-webpack-plugin
-[codeclimate-image]: https://img.shields.io/codeclimate/github/tomchentw/unused-files-webpack-plugin.svg?style=flat-square
-[codeclimate-url]: https://codeclimate.com/github/tomchentw/unused-files-webpack-plugin
-[codeclimate-coverage-image]: https://img.shields.io/codeclimate/coverage/github/tomchentw/unused-files-webpack-plugin.svg?style=flat-square
-[codeclimate-coverage-url]: https://codeclimate.com/github/tomchentw/unused-files-webpack-plugin
+[codeclimate-maintainability-image]: https://img.shields.io/codeclimate/maintainability/tomchentw/unused-files-webpack-plugin.svg?style=flat-square
+[codeclimate-maintainability-url]: https://codeclimate.com/github/tomchentw/unused-files-webpack-plugin
+[codeclimate-c-image]: https://img.shields.io/codeclimate/c/tomchentw/unused-files-webpack-plugin.svg?style=flat-square
+[codeclimate-c-url]: https://codeclimate.com/github/tomchentw/unused-files-webpack-plugin
 [gemnasium-image]: https://img.shields.io/gemnasium/tomchentw/unused-files-webpack-plugin.svg?style=flat-square
 [gemnasium-url]: https://gemnasium.com/tomchentw/unused-files-webpack-plugin
 [gitter-image]: https://badges.gitter.im/Join%20Chat.svg
