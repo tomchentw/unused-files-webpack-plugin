@@ -6,13 +6,14 @@ node_js:
 - '6'
 - '8'
 before_script:
-  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-  - chmod +x ./cc-test-reporter
-  - ./cc-test-reporter before-build
+- curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+- chmod +x ./cc-test-reporter
+- "./cc-test-reporter before-build"
 script:
-  - npm test -- --coverage
+- npm test -- --coverage
 after_script:
-  - if [[ "$TRAVIS_PULL_REQUEST" == "false" && `node --version` == *v8* ]]; then ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT; fi
+- if [[ "$TRAVIS_PULL_REQUEST" == "false" && `node --version` == *v8* ]]; then ./cc-test-reporter
+  after-build --exit-code $TRAVIS_TEST_RESULT; fi
 env:
   global:
-    secure: bu1VaFjYzaCxhMusdlJ2OTjHqfxVBECVI1m5B1FBRnBtqYTugwrJ9w3F91Yk0P6RpsbSRr+ksk/FsgwPiwJUlrwO9CN5ANFeqsBZa/GZXModKOrbMjgqfbdOYxUuZ/czUDjMwLfBt8/6NXBYE/hpffvOWFnp8l5HxhTjq6MyLDNC7MJ2Bmf+r9qEbAXWhsz6LVCkuWYnulbv8PCaGaIfuoPdmuXvWGTmGBw/6Fg4uc8dysk/E6Smz/5Aj+kAz3/bZUrARCP8QIXiyi23G4FKzMgq4YnRdQmkESE6UYZbkjev+9hBTh5cBQx8irWCiDWX7LhTJ4+E71tFLVnWjbek6HuqnCRR0RMuNg2n1/zBv3M1gRP2ZEK6An699QlSbKsPICU0oNdqkoicmh1AHfgYUoNukLla//6mijul3o+VyxZk8bgxpO+1ZbaTvCGjzqVGBGmg1FZpF8AjqWmxKlgXrwXM9J+XGqeFBdX3D+9CM+kcYL8lnEDADAeA7N9jH9mcV+CT19VNSPymRUZImIh9krpo6Nqg7+jySPMAUkMbaoUgoZ4YryWhG8buzOhRY9N+/P+MpYNuxy1Kp36wEyk/V1pcVoh5NQGcjmV6mPCyBip7wj8IOjIlUuyWwTbfm2nTQ+el8q463XNiFBPwwSBqIUOHj/UU1VZ4UgGylAhLGac=
+    secure: DVYVNvf1Yzp4n+lrEbmGLXmu3CQTHZgSCGkyDziB3eyl1n4w6905UNqs5e4pQYGta/dzGnMFS+FG9+V7eKbhe+Hv9Hzdi0aNM0/g+d+4sMAvJNAyL4H91KUdXyVRzyNzBhqffH8nqIledP4/tTapCd/q5w/S/VpRLDTl4tWES0l27HG6juCIauO+sBIV7ZrLCOHltbRLDDGpnUYsyCfSB69Na5lqYPgYABWZFL+L47/Kkx5YSVb5aIvHAL1XxH/IhLq8wweLakzqnwz7h/BjOtuyYb63lP00cQG4FWyRXRswwv8rxn6J+f3EeTTY0qznd2AwQpUlQEWuGxg9QRNqUuoQIupSiL4nsM1YCvOm7DQzh/b7tHjyzy2o7ytaL4nUVg3zasY+7QQ046WWAtCsc+fNG3CUpERmSYOtl3eQ1pVHeSsHskdKljPelOm/J05teWFQqfOmDPagLo2uHZPDehDUfhOTwQSyoPaeHkYnipKwnqx9isUwu+IIaL6vNVZ5Lw6cha5WJw/0vE+NyOTlEgqcRtD66jnawkwl28XESYbBon2ugYJ6UQfpjE4R/8P0446UzE8A7W9AH1JSEdHCPCPN3CnbKBLTOdQUfRSB3KsfIqx0LTv8JGy2akq5XXkKQ8th8tLS8HPs0whJx5QPJQ1XV7m9HEitkG1FwyIKIYQ=
