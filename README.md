@@ -6,13 +6,13 @@
 Install with npm:
 
 ```bash
-npm i --save unused-files-webpack-plugin
+npm i --save-dev unused-files-webpack-plugin
 ```
 
 Install with yarn:
 
 ```bash
-yarn add unused-files-webpack-plugin
+yarn add --dev unused-files-webpack-plugin
 ```
 
 ## Usage
