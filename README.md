@@ -3,11 +3,16 @@
 
 [![Version][npm-image]][npm-url] [![Travis CI][travis-image]][travis-url] [![Quality][codeclimate-maintainability-image]][codeclimate-maintainability-url] [![Coverage][codeclimate-c-image]][codeclimate-c-url] [![Dependencies][gemnasium-image]][gemnasium-url] [![Gitter][gitter-image]][gitter-url]
 
+Install with npm:
 
-## Installation
+```bash
+npm i --save-dev unused-files-webpack-plugin
+```
 
-```sh
-npm i --save unused-files-webpack-plugin
+Install with yarn:
+
+```bash
+yarn add --dev unused-files-webpack-plugin
 ```
 
 ## Usage
