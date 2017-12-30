@@ -27,12 +27,12 @@ engines:
 
 ratings:
   paths:
-  - src/**
+  - "src/**"
 
 # You can globally exclude files from being analyzed by any engine using the
 # exclude_paths key.
 
 exclude_paths:
-- lib/**
-- **/__tests__/
-- **/__fixtures__/
+- "lib/**"
+- "**/__tests__/"
+- "**/__fixtures__/"
