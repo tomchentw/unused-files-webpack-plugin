@@ -37,7 +37,8 @@
     "commit:lib":
       "git add -A && git commit -m 'chore(lib): compile from src with `babel-multi-env`'",
     "prerelease": "npm run commit:lib",
-    "release": "standard-version"
+    "release":
+      "standard-version -m 'chore(release): %s \n\n* CHANGELOG: https://github.com/tomchentw/unused-files-webpack-plugin/blob/v%s/CHANGELOG.md'"
   },
   "lint-staged": {
     "*.{js,jsx,json,css}": ["prettier --write", "git add"]
