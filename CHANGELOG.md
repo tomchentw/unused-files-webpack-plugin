@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.3.0"></a>
+# [3.3.0](https://github.com/tomchentw/unused-files-webpack-plugin/compare/v3.2.0...v3.3.0) (2018-03-14)
+
+
+### Features
+
+* add webpack v4 support ([#21](https://github.com/tomchentw/unused-files-webpack-plugin/issues/21)) ([bde0c36](https://github.com/tomchentw/unused-files-webpack-plugin/commit/bde0c36)), closes [#20](https://github.com/tomchentw/unused-files-webpack-plugin/issues/20)
+
+
+
 <a name="3.2.0"></a>
 # [3.2.0](https://github.com/tomchentw/unused-files-webpack-plugin/compare/v3.1.0...v3.2.0) (2017-10-23)
 
