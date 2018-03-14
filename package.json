@@ -1,6 +1,6 @@
 {
   "name": "unused-files-webpack-plugin",
-  "version": "3.3.0",
+  "version": "3.4.0",
   "description":
     "Glob all files that are not compiled by webpack under webpack's context",
   "license": "MIT",
