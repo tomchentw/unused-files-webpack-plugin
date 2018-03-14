@@ -13,7 +13,7 @@ function globOptionsWith(compiler, globOptions) {
 }
 
 function getFileDepsMap(compilation) {
-  const fileDepsBy = compilation.fileDependencies.reduce(
+  const fileDepsBy = [...compilation.fileDependencies].reduce(
     (acc, usedFilepath) => {
       acc[usedFilepath] = true;
       return acc;
