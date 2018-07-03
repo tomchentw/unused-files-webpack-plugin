@@ -34,7 +34,7 @@
     "precommit": "lint-staged",
     "test": "jest",
     "prebuild:lib": "rimraf lib",
-    "build:lib": "babel-multi-env --multi-versions 8.0.0,6.0.0,4.0.0,0.12.0,0.10.0 --out-dir lib 'src/**/*.js'",
+    "build:lib": "babel-multi-env --given 'src/**/*.js' --multi-versions 8.0.0 6.0.0 4.0.0 0.12.0 0.10.0 --out-dir lib ",
     "precommit:lib": "npm run build:lib",
     "commit:lib": "git add -A && git commit -m 'chore(lib): compile from src with `babel-multi-env`'",
     "prerelease": "npm run commit:lib",
@@ -48,13 +48,13 @@
   },
   "babel": {
     "plugins": [
-      "@babel/plugin-proposal-object-rest-spread"
+      "transform-object-rest-spread"
     ],
     "env": {
       "test": {
         "presets": [
           [
-            "@babel/preset-env"
+            "env"
           ]
         ]
       }
@@ -73,12 +73,12 @@
     "warning": "^3.0.0"
   },
   "devDependencies": {
-    "babel-core": "^7.0.0-beta.3",
+    "@babel/core": "^7.0.0-beta.51",
+    "babel-jest": "^23.2.0",
+    "babel-multi-env": "^0.6.1",
     "babel-plugin-transform-object-rest-spread": "^7.0.0-beta.3",
     "babel-plugin-transform-runtime": "^7.0.0-beta.3",
     "babel-preset-env": "^7.0.0-beta.3",
-    "babel-jest": "^23.2.0",
-    "babel-multi-env": "^0.6.1",
     "husky": "^0.14.3",
     "jest": "^23.2.0",
     "lint-staged": "^7.0.0",
