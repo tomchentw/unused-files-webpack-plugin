@@ -1,8 +1,7 @@
 {
   "name": "unused-files-webpack-plugin",
   "version": "3.4.0",
-  "description":
-    "Glob all files that are not compiled by webpack under webpack's context",
+  "description": "Glob all files that are not compiled by webpack under webpack's context",
   "license": "MIT",
   "author": {
     "name": "tomchentw",
@@ -18,7 +17,11 @@
   },
   "homepage": "https://github.com/tomchentw/unused-files-webpack-plugin/",
   "main": "lib/index.js",
-  "files": ["lib/", "src/", "CHANGELOG.md"],
+  "files": [
+    "lib/",
+    "src/",
+    "CHANGELOG.md"
+  ],
   "keywords": [
     "unused",
     "redundancy",
@@ -31,28 +34,36 @@
     "precommit": "lint-staged",
     "test": "jest",
     "prebuild:lib": "rimraf lib",
-    "build:lib":
-      "babel-multi-env --multi-versions 8.0.0,6.0.0,4.0.0,0.12.0,0.10.0 --out-dir lib 'src/**/*.js'",
+    "build:lib": "babel-multi-env --multi-versions 8.0.0,6.0.0,4.0.0,0.12.0,0.10.0 --out-dir lib 'src/**/*.js'",
     "precommit:lib": "npm run build:lib",
-    "commit:lib":
-      "git add -A && git commit -m 'chore(lib): compile from src with `babel-multi-env`'",
+    "commit:lib": "git add -A && git commit -m 'chore(lib): compile from src with `babel-multi-env`'",
     "prerelease": "npm run commit:lib",
-    "release":
-      "standard-version -m 'chore(release): %s \n\n* CHANGELOG: https://github.com/tomchentw/unused-files-webpack-plugin/blob/v%s/CHANGELOG.md'"
+    "release": "standard-version -m 'chore(release): %s \n\n* CHANGELOG: https://github.com/tomchentw/unused-files-webpack-plugin/blob/v%s/CHANGELOG.md'"
   },
   "lint-staged": {
-    "*.{js,jsx,json,css}": ["prettier --write", "git add"]
+    "*.{js,jsx,json,css}": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "babel": {
-    "plugins": ["transform-object-rest-spread"],
+    "plugins": [
+      "@babel/plugin-proposal-object-rest-spread"
+    ],
     "env": {
       "test": {
-        "presets": [["env"]]
+        "presets": [
+          [
+            "@babel/preset-env"
+          ]
+        ]
       }
     }
   },
   "jest": {
-    "testPathIgnorePatterns": ["\\d+\\.\\d+\\.\\d+"]
+    "testPathIgnorePatterns": [
+      "\\d+\\.\\d+\\.\\d+"
+    ]
   },
   "dependencies": {
     "babel-runtime": "^7.0.0-beta.3",
@@ -63,12 +74,13 @@
   },
   "devDependencies": {
     "babel-core": "^7.0.0-beta.3",
-    "babel-multi-env": "^0.4.0",
     "babel-plugin-transform-object-rest-spread": "^7.0.0-beta.3",
     "babel-plugin-transform-runtime": "^7.0.0-beta.3",
     "babel-preset-env": "^7.0.0-beta.3",
+    "babel-jest": "^23.2.0",
+    "babel-multi-env": "^0.6.1",
     "husky": "^0.14.3",
-    "jest": "^21.3.0-beta.2",
+    "jest": "^23.2.0",
     "lint-staged": "^7.0.0",
     "memory-fs": "^0.4.1",
     "prettier": "^1.11.1",
