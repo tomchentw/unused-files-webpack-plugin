@@ -69,13 +69,6 @@ The options object pass to second parameter of `glob-all`.
 * Default: `{ignore: "node_modules/**/*"}`
 * Directly pass to [`glob-all(pattern, globOptions)`](https://github.com/jpillora/node-glob-all#api), which then pass to [`glob(…, globOptions)`](https://github.com/isaacs/node-glob#options)
 
-#### globOptions.ignore
-
-Ignore pattern for glob. Can be a String or an Array of String.
-
-* Default: `"node_modules/**/*"`
-* Pass to: [`options.ignore`](https://github.com/isaacs/node-glob#options)
-
 #### globOptions.cwd
 
 Current working directory for glob. If you don't set explicitly, it defaults to the `context` specified by your webpack compiler at runtime.
