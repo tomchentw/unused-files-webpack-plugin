@@ -48,9 +48,6 @@ UnusedFilesWebpackPlugin found some unused files:
 ${unused.join(`\n`)}`);
     }
   } catch (error) {
-    if (plugin.options.failOnUnused && compilation.bail) {
-      throw error;
-    }
     const errorsList = plugin.options.failOnUnused
       ? compilation.errors
       : compilation.warnings;
