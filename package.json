@@ -54,6 +54,9 @@
   "jest": {
     "testPathIgnorePatterns": ["\\d+\\.\\d+\\.\\d+"]
   },
+  "peerDependencies": {
+    "webpack": "^4.0.0"
+  },
   "dependencies": {
     "babel-runtime": "^7.0.0-beta.3",
     "glob-all": "^3.1.0",
@@ -74,6 +77,6 @@
     "prettier": "^1.11.1",
     "rimraf": "^2.6.2",
     "standard-version": "^4.3.0",
-    "webpack": "^3.8.1"
+    "webpack": "^4.0.0"
   }
 }
