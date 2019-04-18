@@ -15,6 +15,7 @@ describe(`UnusedFilesWebpackPlugin module`, () => {
     `should work as expected`,
     done => {
       const compiler = webpack({
+        mode: "development",
         context: path.resolve(__dirname, `../../`),
         entry: {
           UnusedFilesWebpackPlugin: path.resolve(__dirname, `../index.js`)
@@ -52,6 +53,7 @@ describe(`UnusedFilesWebpackPlugin module`, () => {
       `should work as expected`,
       done => {
         const compiler = webpack({
+          mode: "development",
           context: path.resolve(__dirname, `../../`),
           entry: {
             UnusedFilesWebpackPlugin: path.resolve(__dirname, `../index.js`)
@@ -91,6 +93,7 @@ describe(`UnusedFilesWebpackPlugin module`, () => {
       `should work as expected for a single pattern`,
       done => {
         const compiler = webpack({
+          mode: "development",
           context: path.resolve(__dirname, `../../`),
           entry: {
             UnusedFilesWebpackPlugin: path.resolve(__dirname, `../index.js`)
@@ -128,6 +131,7 @@ describe(`UnusedFilesWebpackPlugin module`, () => {
       `should work as expected for an array of patterns`,
       done => {
         const compiler = webpack({
+          mode: "development",
           context: path.resolve(__dirname, `../../`),
           entry: {
             UnusedFilesWebpackPlugin: path.resolve(__dirname, `../index.js`)
