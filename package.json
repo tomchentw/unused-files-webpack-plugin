@@ -31,8 +31,7 @@
     "precommit": "lint-staged",
     "test": "jest",
     "prebuild:lib": "rimraf lib",
-    "build:lib":
-      "babel-multi-env --multi-versions 8.0.0,6.0.0,4.0.0,0.12.0,0.10.0 --out-dir lib 'src/**/*.js'",
+    "build:lib": "babel --out-dir lib 'src/**/*.js'",
     "precommit:lib": "npm run build:lib",
     "commit:lib":
       "git add -A && git commit -m 'chore(lib): compile from src with `babel-multi-env`'",
@@ -44,30 +43,29 @@
     "*.{js,jsx,json,css}": ["prettier --write", "git add"]
   },
   "babel": {
-    "plugins": ["transform-object-rest-spread"],
-    "env": {
-      "test": {
-        "presets": [["env"]]
-      }
-    }
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "node": 8
+          }
+        }
+      ]
+    ]
   },
   "jest": {
     "testEnvironment": "node",
     "testPathIgnorePatterns": ["\\d+\\.\\d+\\.\\d+"]
   },
   "dependencies": {
-    "babel-runtime": "^7.0.0-beta.3",
     "glob-all": "^3.1.0",
-    "semver": "^5.5.0",
-    "util.promisify": "^1.0.0",
     "warning": "^3.0.0"
   },
   "devDependencies": {
-    "babel-core": "^7.0.0-beta.3",
-    "babel-multi-env": "^0.4.0",
-    "babel-plugin-transform-object-rest-spread": "^7.0.0-beta.3",
-    "babel-plugin-transform-runtime": "^7.0.0-beta.3",
-    "babel-preset-env": "^7.0.0-beta.3",
+    "@babel/cli": "^7.4.3",
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
     "husky": "^0.14.3",
     "jest": "^21.3.0-beta.2",
     "lint-staged": "^7.0.0",
