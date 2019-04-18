@@ -52,6 +52,7 @@
     }
   },
   "jest": {
+    "testEnvironment": "node",
     "testPathIgnorePatterns": ["\\d+\\.\\d+\\.\\d+"]
   },
   "dependencies": {
