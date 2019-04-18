@@ -70,7 +70,7 @@
   },
   "dependencies": {
     "glob-all": "^3.1.0",
-    "warning": "^3.0.0"
+    "invariant": "^2.2.4"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.3",
