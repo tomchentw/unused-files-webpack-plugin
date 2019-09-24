@@ -45,7 +45,8 @@ async function applyAfterEmit(compiler, compilation, plugin) {
     if (unused.length !== 0) {
       throw new Error(`
 UnusedFilesWebpackPlugin found some unused files:
-${unused.join(`\n`)}`);
+
+  ${unused.join(`\n  `)}`);
     }
   } catch (error) {
     if (plugin.options.failOnUnused && compilation.bail) {
