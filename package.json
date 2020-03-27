@@ -1,8 +1,7 @@
 {
   "name": "unused-files-webpack-plugin",
   "version": "3.4.0",
-  "description":
-    "Glob all files that are not compiled by webpack under webpack's context",
+  "description": "Glob all files that are not compiled by webpack under webpack's context",
   "license": "MIT",
   "author": {
     "name": "tomchentw",
@@ -18,7 +17,11 @@
   },
   "homepage": "https://github.com/tomchentw/unused-files-webpack-plugin/",
   "main": "lib/index.js",
-  "files": ["lib/", "src/", "CHANGELOG.md"],
+  "files": [
+    "lib/",
+    "src/",
+    "CHANGELOG.md"
+  ],
   "keywords": [
     "unused",
     "redundancy",
@@ -31,28 +34,37 @@
     "precommit": "lint-staged",
     "test": "jest",
     "prebuild:lib": "rimraf lib",
-    "build:lib":
-      "babel-multi-env --multi-versions 8.0.0,6.0.0,4.0.0,0.12.0,0.10.0 --out-dir lib 'src/**/*.js'",
+    "build:lib": "babel-multi-env --multi-versions 8.0.0,6.0.0,4.0.0,0.12.0,0.10.0 --out-dir lib 'src/**/*.js'",
     "precommit:lib": "npm run build:lib",
-    "commit:lib":
-      "git add -A && git commit -m 'chore(lib): compile from src with `babel-multi-env`'",
+    "commit:lib": "git add -A && git commit -m 'chore(lib): compile from src with `babel-multi-env`'",
     "prerelease": "npm run commit:lib",
-    "release":
-      "standard-version -m 'chore(release): %s \n\n* CHANGELOG: https://github.com/tomchentw/unused-files-webpack-plugin/blob/v%s/CHANGELOG.md'"
+    "release": "standard-version -m 'chore(release): %s \n\n* CHANGELOG: https://github.com/tomchentw/unused-files-webpack-plugin/blob/v%s/CHANGELOG.md'"
   },
   "lint-staged": {
-    "*.{js,jsx,json,css}": ["prettier --write", "git add"]
+    "*.{js,jsx,json,css}": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "babel": {
-    "plugins": ["transform-object-rest-spread"],
+    "plugins": [
+      "transform-object-rest-spread"
+    ],
     "env": {
       "test": {
-        "presets": [["env"]]
+        "presets": [
+          [
+            "env"
+          ]
+        ]
       }
     }
   },
   "jest": {
-    "testPathIgnorePatterns": ["\\d+\\.\\d+\\.\\d+"]
+    "testEnvironment": "node",
+    "testPathIgnorePatterns": [
+      "\\d+\\.\\d+\\.\\d+"
+    ]
   },
   "dependencies": {
     "babel-runtime": "^7.0.0-beta.3",
@@ -62,6 +74,7 @@
     "warning": "^3.0.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.9.0",
     "babel-core": "^7.0.0-beta.3",
     "babel-multi-env": "^0.4.0",
     "babel-plugin-transform-object-rest-spread": "^7.0.0-beta.3",
@@ -74,6 +87,6 @@
     "prettier": "^1.11.1",
     "rimraf": "^2.6.2",
     "standard-version": "^4.3.0",
-    "webpack": "^3.8.1"
+    "webpack": "^4.0.0"
   }
 }
