@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.0.0"></a>
+# [4.0.0](https://github.com/tomchentw/unused-files-webpack-plugin/compare/v3.4.0...v4.0.0) (2021-07-10)
+
+
+### Features
+
+* **index.js:** Use webpack 5 hook API. ([c4d320e](https://github.com/tomchentw/unused-files-webpack-plugin/commit/c4d320e))
+
+
+
 <a name="3.4.0"></a>
 # [3.4.0](https://github.com/tomchentw/unused-files-webpack-plugin/compare/v3.3.0...v3.4.0) (2018-03-14)
 
