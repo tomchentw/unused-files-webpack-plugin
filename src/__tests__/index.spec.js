@@ -6,8 +6,7 @@ import UnusedFilesWebpackPlugin from "../index";
 const EXPECTED_FILENAME_LIST = [
   `CHANGELOG.md`,
   `README.md`,
-  `src/__tests__/index.spec.js`,
-  `package.json`
+  `src/__tests__/index.spec.js`
 ];
 
 describe(`UnusedFilesWebpackPlugin module`, () => {
@@ -19,10 +18,12 @@ describe(`UnusedFilesWebpackPlugin module`, () => {
         entry: {
           UnusedFilesWebpackPlugin: path.resolve(__dirname, `../index.js`)
         },
+        mode: "development",
         output: {
           path: __dirname // It will be in MemoryFS :)
         },
-        plugins: [new UnusedFilesWebpackPlugin()]
+        plugins: [new UnusedFilesWebpackPlugin()],
+        resolve: { fallback: { path: false } }
       });
       compiler.outputFileSystem = new MemoryFS();
 
@@ -56,6 +57,7 @@ describe(`UnusedFilesWebpackPlugin module`, () => {
           entry: {
             UnusedFilesWebpackPlugin: path.resolve(__dirname, `../index.js`)
           },
+          mode: "development",
           output: {
             path: __dirname
           },
@@ -63,7 +65,8 @@ describe(`UnusedFilesWebpackPlugin module`, () => {
             new UnusedFilesWebpackPlugin({
               pattern: "src/**/*.*"
             })
-          ]
+          ],
+          resolve: { fallback: { path: false } }
         });
         compiler.outputFileSystem = new MemoryFS();
 
@@ -95,6 +98,7 @@ describe(`UnusedFilesWebpackPlugin module`, () => {
           entry: {
             UnusedFilesWebpackPlugin: path.resolve(__dirname, `../index.js`)
           },
+          mode: "development",
           output: {
             path: __dirname
           },
@@ -102,7 +106,8 @@ describe(`UnusedFilesWebpackPlugin module`, () => {
             new UnusedFilesWebpackPlugin({
               patterns: ["src/**/*.*"]
             })
-          ]
+          ],
+          resolve: { fallback: { path: false } }
         });
         compiler.outputFileSystem = new MemoryFS();
 
@@ -132,6 +137,7 @@ describe(`UnusedFilesWebpackPlugin module`, () => {
           entry: {
             UnusedFilesWebpackPlugin: path.resolve(__dirname, `../index.js`)
           },
+          mode: "development",
           output: {
             path: __dirname
           },
@@ -139,7 +145,8 @@ describe(`UnusedFilesWebpackPlugin module`, () => {
             new UnusedFilesWebpackPlugin({
               patterns: ["src/**/*.*", "!**/__snapshots__/**/*.*"]
             })
-          ]
+          ],
+          resolve: { fallback: { path: false } }
         });
         compiler.outputFileSystem = new MemoryFS();
 
